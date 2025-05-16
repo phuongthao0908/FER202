@@ -4,8 +4,7 @@ import './App.css';
 function App() {
   return (
     <div>
-     <h1>Hello World</h1>
-     <h2>Welcome</h2>
+      <h1 style={{color: "blue", textAlign: "center" }}>Hello world!</h1>
     </div>
   );
 }
