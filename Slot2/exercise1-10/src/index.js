@@ -7,6 +7,11 @@ import NamePerson from "./NamePerson";
 import PersonDetails from "./PersonDetails";
 import PeopleList from "./PeopleList";
 import PeopleTable from "./PeopleTable";
+import FirstTeenager from "./FirstTeenager";
+import AreAllTeenagers from "./AreAllTeenagers";
+import SortedPeople from "./SortedPeople";
+import GroupedByOccupation from "./GroupedByOccupation";
+import AverageAgePerOccupation from "./AverageAgePerOccupation";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,8 +22,14 @@ root.render(
     <PersonDetails />
     <PeopleList />
     <PeopleTable />
+    <FirstTeenager />
+    <AreAllTeenagers />
+    <SortedPeople />
+    <GroupedByOccupation />
+    <AverageAgePerOccupation />
   </React.StrictMode>
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
