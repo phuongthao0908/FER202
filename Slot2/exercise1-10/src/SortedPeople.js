@@ -16,7 +16,7 @@ function SortedPeople() {
   return (
     <div style={{ textAlign: "center" }}>
       <h2>Sorted People</h2>
-      <ul>
+      <ul style={{ listStyleType: "none" }}>
         {sortedPeople.map((p, index) => (
           <li key={index}>
             {p.name} - {p.age} - {p.occupation}

@@ -20,7 +20,7 @@ function GroupedByOccupation() {
       {Object.entries(grouped).map(([occupation, people]) => (
         <div key={occupation}>
           <h3>{occupation}</h3>
-          <ul>
+          <ul style={{ listStyleType: "none" }}>
             {people.map((p, idx) => (
               <li key={idx}>{p.name} - {p.age}</li>
             ))}
