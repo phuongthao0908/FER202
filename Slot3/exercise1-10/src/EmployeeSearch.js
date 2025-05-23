@@ -11,7 +11,7 @@ function EmployeeSearch() {
   const [query, setQuery] = useState('');
 
   const filteredEmployees = employees.filter(employee =>
-    employee.name.toLowerCase().includes(query.toLowerCase())
+    employee.name.toLowerCase().startsWith(query.toLowerCase())
   );
 
   return (
