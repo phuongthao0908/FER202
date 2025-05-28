@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Grid Layout</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <style>
+    .gray-box {
+      background-color: #d9d9d9;
+      border: 1px solid #999;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .custom-footer {
+      background-color: #d6c4c4;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+
+    .custom-footer h4 {
+      margin: 0;
+      font-weight: bold;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <!-- Header block -->
+    <div class="p-5 mb-4 bg-light">
+      <h1 class="display-6">Let's test the grid!</h1>
+    </div>
+
+    <!-- Nav Pills -->
+    <ul class="nav nav-pills mb-4">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+
+    <!-- Grid layout -->
+<div class="row g-0">
+  <div class="col gray-box">First col</div>
+  <div class="col gray-box">Second col</div>
+</div>
+
+<div class="row g-0">
+  <div class="col gray-box">col</div>
+  <div class="col gray-box">col</div>
+  <div class="col gray-box">col</div>
+</div>
+
+<div class="row g-0">
+  <div class="col gray-box">col</div>
+  <div class="col gray-box">col</div>
+  <div class="col gray-box">col</div>
+  <div class="col gray-box">col</div>
+</div>
+
+    <!-- Footer -->
+    <div class="custom-footer">
+      <h4>Created by ABC!</h4>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
