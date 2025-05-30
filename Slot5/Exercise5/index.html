@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Students Detail</title>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .top-bar {
       background-color: #fdd385;
@@ -45,21 +45,22 @@
     .footer a {
       color: white;
       margin-right: 10px;
+      text-decoration: none;
     }
     .btn-custom-orange {
-      background-color: #ff6200; /* Màu cam */
+      background-color: #ff6200;
       color: #fff;
       border: none;
     }
     .btn-custom-orange:hover {
-      background-color: #e55b00; /* Màu cam đậm hơn khi hover */
+      background-color: #e55b00;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top bar -->
-  <div class="top-bar d-flex justify-content-between align-items-center">
+  <!-- Top Bar -->
+  <div class="top-bar d-flex justify-content-between align-items-center flex-wrap">
     <div class="d-flex align-items-center gap-3">
       <img src="images/logo.jpg" alt="FPT Logo" height="30">
       <div class="d-flex align-items-center gap-3 fw-semibold text-uppercase custom-nav-text">
@@ -72,12 +73,12 @@
         <span>Sinh viên</span>
       </div>
     </div>
-    <form class="d-flex">
+    <form class="d-flex mt-2 mt-md-0">
       <input class="form-control form-control-sm" type="search" placeholder="Search">
     </form>
   </div>
 
-  <!-- Banner Image -->
+  <!-- Header Image -->
   <img src="images/ảnh_trang_chủ.jpg" alt="Header Banner" class="header-img">
 
   <!-- Breadcrumb -->
@@ -85,99 +86,99 @@
     Home / Students
   </div>
 
-  <!-- Content -->
+  <!-- Student Detail Section -->
   <div class="container py-5">
     <h3 class="text-center mb-4">Students Detail</h3>
     <div class="row g-4">
 
       <!-- Student 1 -->
-      <div class="col-md-6">
-        <div class="card">
-          <img src="images/ảnh_1.jpg" class="card-img-top" alt="Nguyễn Hữu Quốc Oánh">
+      <div class="col-md-6 col-lg-6">
+        <div class="card h-100 shadow">
+          <img src="images/ảnh_1.jpg" class="card-img-top" alt="Nguyễn Văn Thiện">
           <div class="card-body text-center">
-            <p>DE160192</p>
-            <p>Nguyễn Văn Thiện</p>
-            <p>Đà Nẵng</p>
-            <div class="form-check d-inline-block">
-              <input class="form-check-input" type="radio" name="status1" checked>
-              <label class="form-check-label">Present</label>
+            <p class="mb-1 fw-bold">DE160192</p>
+            <p class="mb-1">Nguyễn Văn Thiện</p>
+            <p class="mb-2">Đà Nẵng</p>
+            <div class="d-flex justify-content-center gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status1" id="status1Present" checked>
+                <label class="form-check-label" for="status1Present">Present</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status1" id="status1Absent">
+                <label class="form-check-label" for="status1Absent">Absent</label>
+              </div>
             </div>
-            <div class="form-check d-inline-block ms-3">
-              <input class="form-check-input" type="radio" name="status1">
-              <label class="form-check-label">Absent</label>
-            </div>
-            <div class="mt-2">
-              <button class="btn btn-custom-orange btn-sm">Submit</button>
-            </div>
+            <button class="btn btn-custom-orange btn-sm mt-3">Submit</button>
           </div>
         </div>
       </div>
 
       <!-- Student 2 -->
-      <div class="col-md-6">
-        <div class="card">
-          <img src="images/ảnh_2.jpg" class="card-img-top" alt="Chay Văn Thiện">
+      <div class="col-md-6 col-lg-6">
+        <div class="card h-100 shadow">
+          <img src="images/ảnh_2.jpg" class="card-img-top" alt="Huỳnh Khánh Vy">
           <div class="card-body text-center">
-            <p>DE160377</p>
-            <p>Huỳnh Khánh Vy</p>
-            <p>Quảng Nam</p>
-            <div class="form-check d-inline-block">
-              <input class="form-check-input" type="radio" name="status2" checked>
-              <label class="form-check-label">Present</label>
+            <p class="mb-1 fw-bold">DE160377</p>
+            <p class="mb-1">Huỳnh Khánh Vy</p>
+            <p class="mb-2">Quảng Nam</p>
+            <div class="d-flex justify-content-center gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status2" id="status2Present" checked>
+                <label class="form-check-label" for="status2Present">Present</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status2" id="status2Absent">
+                <label class="form-check-label" for="status2Absent">Absent</label>
+              </div>
             </div>
-            <div class="form-check d-inline-block ms-3">
-              <input class="form-check-input" type="radio" name="status2">
-              <label class="form-check-label">Absent</label>
-            </div>
-            <div class="mt-2">
-              <button class="btn btn-custom-orange btn-sm">Submit</button>
-            </div>
+            <button class="btn btn-custom-orange btn-sm mt-3">Submit</button>
           </div>
         </div>
       </div>
 
       <!-- Student 3 -->
-      <div class="col-md-6">
-        <div class="card">
+      <div class="col-md-6 col-lg-6">
+        <div class="card h-100 shadow">
           <img src="images/ảnh_3.jpg" class="card-img-top" alt="Đỗ Nguyên Phúc">
           <div class="card-body text-center">
-            <p>DE160547</p>
-            <p>Đỗ Nguyên Phúc</p>
-            <p>Quảng Nam</p>
-            <div class="form-check d-inline-block">
-              <input class="form-check-input" type="radio" name="status3" checked>
-              <label class="form-check-label">Present</label>
+            <p class="mb-1 fw-bold">DE160547</p>
+            <p class="mb-1">Đỗ Nguyên Phúc</p>
+            <p class="mb-2">Quảng Nam</p>
+            <div class="d-flex justify-content-center gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status3" id="status3Present" checked>
+                <label class="form-check-label" for="status3Present">Present</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status3" id="status3Absent">
+                <label class="form-check-label" for="status3Absent">Absent</label>
+              </div>
             </div>
-            <div class="form-check d-inline-block ms-3">
-              <input class="form-check-input" type="radio" name="status3">
-              <label class="form-check-label">Absent</label>
-            </div>
-            <div class="mt-2">
-              <button class="btn btn-custom-orange btn-sm">Submit</button>
-            </div>
+            <button class="btn btn-custom-orange btn-sm mt-3">Submit</button>
           </div>
         </div>
       </div>
 
       <!-- Student 4 -->
-      <div class="col-md-6">
-        <div class="card">
+      <div class="col-md-6 col-lg-6">
+        <div class="card h-100 shadow">
           <img src="images/ảnh_4.jpg" class="card-img-top" alt="Lê Hoàng Minh">
           <div class="card-body text-center">
-            <p>DE170089</p>
-            <p>Lê Hoàng Minh</p>
-            <p>Đà Nẵng</p>
-            <div class="form-check d-inline-block">
-              <input class="form-check-input" type="radio" name="status4" checked>
-              <label class="form-check-label">Present</label>
+            <p class="mb-1 fw-bold">DE170089</p>
+            <p class="mb-1">Lê Hoàng Minh</p>
+            <p class="mb-2">Đà Nẵng</p>
+            <div class="d-flex justify-content-center gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status4" id="status4Present" checked>
+                <label class="form-check-label" for="status4Present">Present</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status4" id="status4Absent">
+                <label class="form-check-label" for="status4Absent">Absent</label>
+              </div>
             </div>
-            <div class="form-check d-inline-block ms-3">
-              <input class="form-check-input" type="radio" name="status4">
-              <label class="form-check-label">Absent</label>
-            </div>
-            <div class="mt-2">
-              <button class="btn btn-custom-orange btn-sm">Submit</button>
-            </div>
+            <button class="btn btn-custom-orange btn-sm mt-3">Submit</button>
           </div>
         </div>
       </div>
@@ -186,10 +187,10 @@
   </div>
 
   <!-- Footer -->
-  <div class="footer d-flex justify-content-between align-items-center flex-wrap px-4">
-    <div>
+  <footer class="footer d-flex justify-content-between flex-wrap align-items-start px-4">
+    <div class="mb-3">
       <p><strong>Our Address</strong></p>
-      <p>Số 27 Điện Bàn, Quảng Nam</p>
+      <p>Số 29 Điện Thọ, Quảng Nam</p>
       <p>Email: example@example.com</p>
     </div>
     <div class="text-end">
@@ -201,8 +202,8 @@
       </div>
       <div>© Copyright 2023</div>
     </div>
-  </div>
+  </footer>
 
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
