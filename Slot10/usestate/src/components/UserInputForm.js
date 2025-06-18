@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function UserInputForm() {
   const [name, setName] = useState('Adam');
-  const [age, setAge] = useState(35);
+  const [age, setAge] = useState(18);
 
   return (
     <div>
