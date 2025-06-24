@@ -1,0 +1,83 @@
+/* src/App.css */
+.App {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  height: 100vh; /* Đảm bảo quiz chiếm toàn bộ chiều cao màn hình */
+  text-align: center;
+  background-color: #f7f7f7; /* Màu nền nhẹ nhàng */
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.quiz-container {
+  max-width: 600px;  /* Giới hạn chiều rộng quiz container */
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+  border-radius: 15px;  /* Tạo bo tròn cho khung */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng cho container */
+  text-align: left;
+  border: 2px solid #ddd; /* Thêm viền cho quiz container */
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 16px;
+  color: #333;
+  margin-left: 10px;
+}
+
+input[type="radio"] {
+  margin: 10px;
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: red;  /* Nút "Next" có màu đỏ */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Căn giữa nút */
+}
+
+button:hover {
+  background-color: #cc0000; /* Hiệu ứng khi hover */
+}
+
+input[type="radio"]:checked {
+  background-color: #4CAF50;
+  color: white;
+}
+
+input[type="radio"]:not(:checked) {
+  background-color: #f7f7f7;
+}
+
+h2 {
+  font-size: 32px;
+  color: red;
+  margin-top: 20px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
