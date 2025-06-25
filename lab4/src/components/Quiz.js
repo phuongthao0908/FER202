@@ -1,7 +1,6 @@
-// src/Quiz.js
 import React, { useState } from 'react';
 
-// Dữ liệu câu hỏi và đáp án
+// Dữ liệu câu hỏi và đáp án mặc định
 export const quizData = [
   {
     question: 'What is ReactJS?',
@@ -25,6 +24,12 @@ const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isQuizCompleted, setIsQuizCompleted] = useState(false);
   const [score, setScore] = useState(0);
+  const [questions, setQuestions] = useState(quizData);  // Lưu trữ câu hỏi và đáp án trong state
+
+  // Thêm câu hỏi mới
+  const [newQuestion, setNewQuestion] = useState('');
+  const [newAnswers, setNewAnswers] = useState(['', '', '']);
+  const [newCorrectAnswer, setNewCorrectAnswer] = useState('');
 
   const handleChange = (questionIndex, answer) => {
     setAnswers({
@@ -33,18 +38,34 @@ const Quiz = () => {
     });
   };
 
+  // Hàm để thay đổi câu hỏi
+  const handleQuestionChange = (index, value) => {
+    const newQuestions = [...questions];
+    newQuestions[index].question = value;
+    setQuestions(newQuestions);
+  };
+
+  // Hàm để thay đổi đáp án
+  const handleAnswerChange = (index, answerIndex, value) => {
+    const newQuestions = [...questions];
+    newQuestions[index].answers[answerIndex] = value;
+    setQuestions(newQuestions);
+  };
+
+  // Chuyển sang câu hỏi tiếp theo
   const nextQuestion = () => {
-    if (answers[currentQuestionIndex] === quizData[currentQuestionIndex].correctAnswer) {
+    if (answers[currentQuestionIndex] === questions[currentQuestionIndex].correctAnswer) {
       setScore(score + 1);
     }
 
-    if (currentQuestionIndex < quizData.length - 1) {
+    if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       setIsQuizCompleted(true); // Hoàn thành quiz
     }
   };
 
+  // Khởi động lại quiz
   const restartQuiz = () => {
     setIsQuizCompleted(false);
     setScore(0);
@@ -52,12 +73,67 @@ const Quiz = () => {
     setAnswers({});
   };
 
+  // Hàm để thêm câu hỏi mới
+  const addNewQuestion = () => {
+    const newQuestionData = {
+      question: newQuestion,
+      answers: newAnswers,
+      correctAnswer: newCorrectAnswer
+    };
+
+    setQuestions([...questions, newQuestionData]);
+    setNewQuestion('');
+    setNewAnswers(['', '', '']);
+    setNewCorrectAnswer('');
+  };
+
   return (
     <div className="quiz-container">
+      {/* Form nhập câu hỏi mới (đặt lên trên cùng) */}
+      <h2>Enter a New Question</h2>
+      <div>
+        <label>Question:</label>
+        <input
+          type="text"
+          value={newQuestion}
+          onChange={(e) => setNewQuestion(e.target.value)}  // Cập nhật câu hỏi mới
+        />
+      </div>
+
+      <div>
+        <h3>Answers:</h3>
+        {newAnswers.map((answer, index) => (
+          <div key={index}>
+            <label>Answer {index + 1}:</label>
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) => {
+                const updatedAnswers = [...newAnswers];
+                updatedAnswers[index] = e.target.value;
+                setNewAnswers(updatedAnswers);  // Cập nhật các đáp án mới
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div>
+        <label>Correct Answer:</label>
+        <input
+          type="text"
+          value={newCorrectAnswer}
+          onChange={(e) => setNewCorrectAnswer(e.target.value)}  // Cập nhật đáp án đúng
+        />
+      </div>
+
+      <button onClick={addNewQuestion}>Add Question</button>
+
+      {/* Hiển thị câu hỏi và đáp án */}
       {!isQuizCompleted ? (
         <div>
-          <h3>{quizData[currentQuestionIndex].question}</h3>
-          {quizData[currentQuestionIndex].answers.map((answer, index) => (
+          <h3>{questions[currentQuestionIndex].question}</h3>
+          {questions[currentQuestionIndex].answers.map((answer, index) => (
             <div key={index}>
               <input
                 type="radio"
@@ -74,7 +150,7 @@ const Quiz = () => {
       ) : (
         <div>
           <h2 style={{ color: 'red' }}>Quiz Completed!</h2>
-          <p>Your score: {score} / {quizData.length}</p>
+          <p>Your score: {score} / {questions.length}</p>
           <button onClick={restartQuiz}>Restart Quiz</button>
         </div>
       )}
