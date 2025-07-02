@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post from API 1"
+    },
+    {
+      "id": 2,
+      "title": "Post from API 2"
+    },
+    {
+      "id": 3,
+      "title": "Post from API 3"
+    }
+  ]
+}
