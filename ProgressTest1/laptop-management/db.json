@@ -32,6 +32,7 @@
         "price": "$1600",
         "image": "/images/lenovo-thinkpad.jpg"
       }
+      
     ],
     "UserAccounts": [
       {
@@ -62,6 +63,8 @@
         "account_type": "guest",
         "status": "active"
       }
+
+    
     ]
   }
   
